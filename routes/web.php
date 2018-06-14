@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', 'ArtistsController@index');
+Route::get('/', 'ChrllController@index');
