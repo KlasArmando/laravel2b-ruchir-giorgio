@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Home - Chrll</title>
+    <title>Albums - Chrll</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -324,6 +324,11 @@
         </div>
     @endforeach
 </div>
+@guest
+    <span></span>
+@else
+    <nav><ul><li><a href="{{ url('/createAlbum') }}">create</a></li></ul></nav>
+@endguest
 <footer>
     <ul class="leftsidefooter">
         <li>© 2018 Chrll.</li>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Home - Chrll</title>
+    <title>{{$album->title}} van {{$album->artist}} - Chrll</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -23,6 +23,10 @@
             width: 1080px;
             animation-name: slideToPlaceforHTML;
             animation-duration: 1.6s;
+        }
+        @keyframes slideToPlaceforHTML {
+            0% {margin-top: 100px;}
+            100% {margin-top: 0px;}
         }
         .logo {
             text-align: center;
@@ -63,54 +67,6 @@
             background-color: #68c1be;
             transition: 0.4s;
             border-radius: 4px;
-        }
-        .overview {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            width: 1080px;
-        }
-        .coverimage {
-            height: 250px;
-            margin: 12px;
-            opacity: 1;
-            border-radius: 1%;
-            width: 250px;
-            z-index: -1;
-            animation-name: slideToPlaceforCoverArt;
-            animation-duration: 1.6s;
-        }
-        @keyframes slideToPlaceforCoverArt {
-            0% {margin-top: 100px;}
-            100% {margin-top: 12px;}
-        }
-        @keyframes slideToPlaceforHTML {
-            0% {margin-top: 100px;}
-            100% {margin-top: 0px;}
-        }
-        .covertext {
-            color: #FFF;
-            font-family: sans-serif;
-            font-size: 23px;
-            margin-top: -148px;
-            margin-bottom: 128px;
-            opacity: 0;
-            text-align: center;
-            z-index: 2;
-        }
-        .coverart a {
-            text-decoration: none;
-        }
-        .coverart a .covertext:hover {
-            color: #FFF;
-            transition: 0.4s;
-        }
-        .coverart:hover .covertext {
-            transition: 0.3s;
-            opacity: 0.8;
-        }
-        .coverart:hover .coverimage {
-            opacity: 0.3;
-            transition: 0.3s;
         }
         .logo a {
             color: inherit;
@@ -195,6 +151,122 @@
             border-bottom-width: 1px;
             padding: 5px;
         }
+        #coverimage {
+            margin-left: 75px;
+            width: 300px;
+            height: auto;
+        }
+        .row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        #album_name, #artist_name {
+            margin-left: 75px;
+            width: 100%;
+        }
+        #album_name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #artist_name {
+            font-style: italic;
+        }
+        .grid1 {
+            width: 10%;
+        }
+        .grid2 {
+            width: 20%;
+        }
+        .grid3 {
+            width: 30%;
+        }
+        .grid4 {
+            width: 40%;
+        }
+        .grid5 {
+            width: 50%;
+        }
+        .grid6 {
+            width: 60%;
+        }
+        .grid7 {
+            width: 70%;
+        }
+        .grid8 {
+            width: 80%;
+        }
+        .grid9 {
+            width: 90%;
+        }
+        .grid10 {
+            width: 100%;
+        }
+        #album_description_text {
+            width: 70%;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+        #album_description_wrapper {
+            border-style: solid;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .meter {
+            display: flex;
+            width: 500px;
+        }
+        .meter-score-bar-1,
+        .meter-score-bar-2,
+        .meter-score-bar-3,
+        .meter-score-bar-4,
+        .meter-score-bar-5 {
+            background: #222;
+            border-radius: 2px;
+            height: 20px;
+            margin-left: 2.5px;
+            margin-right: 2.5px;
+        }
+
+        .meter-score-1 .meter-score-bar-1,
+        .meter-score-2 .meter-score-bar-1,
+        .meter-score-2 .meter-score-bar-2,
+        .meter-score-3 .meter-score-bar-1,
+        .meter-score-3 .meter-score-bar-2,
+        .meter-score-3 .meter-score-bar-3,
+        .meter-score-4 .meter-score-bar-1,
+        .meter-score-4 .meter-score-bar-2,
+        .meter-score-4 .meter-score-bar-3,
+        .meter-score-4 .meter-score-bar-4,
+        .meter-score-5 .meter-score-bar-1,
+        .meter-score-5 .meter-score-bar-2,
+        .meter-score-5 .meter-score-bar-3,
+        .meter-score-5 .meter-score-bar-4,
+        .meter-score-5 .meter-score-bar-5 {
+            animation-name: animateColoredMeters;
+            animation-duration: 3.6s;
+            background: #8bfdfa;
+        }
+        @keyframes animateColoredMeters {
+             0% {background-color: #222;}
+             100% {background-color: #8bfdfa;}
+         }
+        .meter-score-bar-1 {
+            width: 20%;
+        }
+        .meter-score-bar-2 {
+            width: 20%;
+        }
+        .meter-score-bar-3 {
+            width: 20%;
+        }
+        .meter-score-bar-4 {
+            width: 20%;
+        }
+        .meter-score-bar-5 {
+            width: 20%;
+        }
         @media screen and (min-width: 375px) and (max-width: 667px) and (orientation: portrait) {
             html {
                 width: 100%;
@@ -227,33 +299,6 @@
                 color: #5a6268;
                 background-color: #68c1be;
                 transition: 0.4s;
-            }
-            .overview {
-                display: grid;
-                margin-left: 7px;
-                width: 100%;
-                grid-template-columns: auto auto;
-            }
-            .coverart {
-                height: auto;
-                width: 280px;
-            }
-            .coverimage {
-                height: auto;
-                margin: 10px;
-                width: 280px;
-                z-index: -1;
-            }
-            .covertext {
-                color: #DCDCDC;
-                font-family: sans-serif;
-                font-size: 23px;
-                margin-left: 6%;
-                margin-top: -148px;
-                margin-bottom: 128px;
-                opacity: 0;
-                text-align: center;
-                z-index: 2;
             }
             footer {
                 margin-top: 30px;
@@ -298,8 +343,7 @@
             <li><a class="nav-link" href="{{ route('login') }}">{{ __('INLOGGEN') }}</a></li>
         @else
             <li class="nav-item dropdown">
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -314,16 +358,72 @@
         @endguest
     </ul>
 </nav>
-<div class="overview">
-    @foreach($album->reverse() as $albums)
-        <div class="coverart">
-            <a href="{{ url('/album/'.$albums->id)}}">
-                <img class="coverimage" src="{{$albums->album_art}}">
-                <p class="covertext">{{$albums->title}}</p>
-            </a>
+<div id="container">
+    <div class="row">
+    <div class="grid3">
+        <img id="coverimage" src="{{$album->album_art}}">
+        <p id="album_name">{{$album->title}}</p>
+        <p id="artist_name">van {{$album->artist}}</p>
+    </div>
+    <div class="grid7">
+        <p>Populariteit</p>
+        <div class="meter meter-score-{{$album->popularity}}">
+            <div class="meter-score-bar-1"></div>
+            <div class="meter-score-bar-2"></div>
+            <div class="meter-score-bar-3"></div>
+            <div class="meter-score-bar-4"></div>
+            <div class="meter-score-bar-5"></div>
         </div>
-    @endforeach
+        <p>Woordenschat</p>
+        <div class="meter meter-score-{{$album->vocabulary}}">
+            <div class="meter-score-bar-1"></div>
+            <div class="meter-score-bar-2"></div>
+            <div class="meter-score-bar-3"></div>
+            <div class="meter-score-bar-4"></div>
+            <div class="meter-score-bar-5"></div>
+        </div>
+        <p>Rhymes</p>
+        <div class="meter meter-score-{{$album->rhymes}}">
+            <div class="meter-score-bar-1"></div>
+            <div class="meter-score-bar-2"></div>
+            <div class="meter-score-bar-3"></div>
+            <div class="meter-score-bar-4"></div>
+            <div class="meter-score-bar-5"></div>
+        </div>
+        <p>Vergelijkingen</p>
+        <div class="meter meter-score-{{$album->similes}}">
+            <div class="meter-score-bar-1"></div>
+            <div class="meter-score-bar-2"></div>
+            <div class="meter-score-bar-3"></div>
+            <div class="meter-score-bar-4"></div>
+            <div class="meter-score-bar-5"></div>
+        </div>
+        <p>Obsceniteit</p>
+        <div class="meter meter-score-{{$album->profanity}}">
+            <div class="meter-score-bar-1"></div>
+            <div class="meter-score-bar-2"></div>
+            <div class="meter-score-bar-3"></div>
+            <div class="meter-score-bar-4"></div>
+            <div class="meter-score-bar-5"></div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="grid10" id="album_description_wrapper">
+            <p id="album_description_text">{{$album->description}}</p>
+        </div>
+    </div>
 </div>
+@guest
+    <span></span>
+@else
+    <nav>
+        <ul>
+            <li><a href="{{ url('editAlbum/'.$album->id)."/edit"  }}">edit</a></li>
+            <li><a href="{{ url('/deleteAlbum') }}">delete</a></li>
+        </ul>
+    </nav>
+@endguest
 <footer>
     <ul class="leftsidefooter">
         <li>© 2018 Chrll.</li>
@@ -335,6 +435,5 @@
         <li><a href="https://www.instagram.com/whatschrll">Instagram</a></li>
     </ul>
 </footer>
-
 </body>
 </html>
