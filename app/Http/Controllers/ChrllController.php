@@ -26,6 +26,11 @@ class ChrllController extends Controller
         return view('album');
     }
 
+    public function contact()
+    {
+        return view('contact');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

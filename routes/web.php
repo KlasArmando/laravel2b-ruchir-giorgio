@@ -28,3 +28,6 @@ Route::post('/createAlbum', 'AlbumController@storeAlbum');
 Route::get('/album/{id}', 'AlbumController@viewAlbum');
 Route::get('/editAlbum/{id}', 'AlbumController@editAlbum');
 Route::put('/editAlbum/{id}/edit', 'AlbumController@updateAlbum');
+
+
+Route::get('/contact', 'ChrllController@contact');

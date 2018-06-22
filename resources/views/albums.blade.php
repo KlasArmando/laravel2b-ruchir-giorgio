@@ -162,31 +162,12 @@
             text-align: center;
             text-transform: uppercase;
         }
-        h3 {
-            color: #a2865e;
-            font-family: sans-serif;
-            font-weight: 100;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            margin-top: -10px;
-            text-align: center;
-            text-transform: uppercase;
-        }
         h4 {
             font-weight: 100;
             text-align: center;
         }
         form {
             display: grid;
-        }
-        form label {
-            color: #a2865e;
-            font-family: sans-serif;
-            font-weight: 100;
-            letter-spacing: 2.4px;
-            margin-bottom: 1px;
-            margin-top: 18px;
-            text-transform: uppercase;
         }
         form input {
             border-style: none;

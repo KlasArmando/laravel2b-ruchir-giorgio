@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Home - Chrll</title>
+    <title>Contact - Chrll</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -170,11 +170,45 @@
             display: grid;
         }
         form input {
+            color: #68c1be;
+            margin: 5px;
+            margin-bottom: 15px;
             border-style: none;
-            border-bottom-color: black;
+            background-color: transparent;
+            border-bottom-color: #8bfdfa;
             border-bottom-style: solid;
             border-bottom-width: 1px;
             padding: 5px;
+            font-family: 'Roboto Slab', serif;
+        }
+        .contact {
+            display: flex;
+            justify-content: center;
+            height: 200px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            width: 1080px;
+        }
+        .companyaddress {
+            color: #8bfdfa;
+            font-weight: 100;
+            letter-spacing: 2px;
+            margin-left: 30px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+        .submitbtn {
+            color: #68c1be;
+            margin: 30px;
+            text-decoration: underline;
+            border-style: none;
+            padding: 4px;
+        }
+        .submitbtn:hover {
+            color: #5a6268;
+            background-color: #68c1be;
+            transition: 0.4s;
+            border-radius: 4px;
         }
         @media screen and (min-width: 375px) and (max-width: 667px) and (orientation: portrait) {
             html {
@@ -295,16 +329,23 @@
         @endguest
     </ul>
 </nav>
-<div class="overview">
-    @foreach($album->reverse() as $albums)
-        <div class="coverart">
-            <a href="{{ url('/album/'.$albums->id)}}">
-                <img class="coverimage" src="{{$albums->album_art}}">
-                <p class="covertext">{{$albums->title}}</p>
-            </a>
-        </div>
-    @endforeach
+<h1>Contact</h1>
+<div class="contact">
+    <div style="width: 600px"><iframe width="600" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Posthumalaan%20120%2C%20Rotterdam+(Chrll)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Embed Google Map</a></iframe></div><br />
+    <div class="companyaddress">
+        <p>Chrll.</p>
+        <p>Posthumalaan 120</p>
+        <p>3072AG Rotterdam</p>
+        <p>Nederland</p>
+    </div>
 </div>
+<form>
+    <label for="firstname">Voornaam:</label><input type="text">
+    <label for="lastname">Achternaam:</label><input type="text">
+    <label for="email">E-mailadres:</label><input type="email">
+    <label for="message">Bericht:</label><input type="text">
+    <input type="submit" value="Verstuur!" class="submitbtn">
+</form>
 <footer>
     <ul class="leftsidefooter">
         <li>© 2018 Chrll.</li>
