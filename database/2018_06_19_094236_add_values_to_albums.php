@@ -13,7 +13,7 @@ class AddValuesToAlbums extends Migration
      */
     public function up()
     {
-        Schema::table('albums', function($table) {
+        Schema::table('album1s', function($table) {
             $table->string('popularity');
             $table->string('vocabulary');
             $table->string('rhymes');
@@ -29,7 +29,7 @@ class AddValuesToAlbums extends Migration
      */
     public function down()
     {
-        Schema::table('albums', function($table) {
+        Schema::table('album1s', function($table) {
             $table->dropColumn('popularity');
             $table->dropColumn('vocabulary');
             $table->dropColumn('rhymes');

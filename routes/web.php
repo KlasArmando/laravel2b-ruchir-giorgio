@@ -15,19 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', 'AlbumController@index');
-Route::get('/album', 'ChrllController@album');
-Route::get('/albums', 'AlbumController@albums');
+//Route::get('/', 'AlbumController@index');
+//Route::get('/album', 'ChrllController@album');
+//Route::get('/albums', 'Album1Controller@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/createAlbum', 'AlbumController@createAlbum');
-Route::post('/createAlbum', 'AlbumController@storeAlbum');
-
-Route::get('/album/{id}', 'AlbumController@viewAlbum');
-Route::get('/editAlbum/{id}', 'AlbumController@editAlbum');
-Route::put('/editAlbum/{id}/edit', 'AlbumController@updateAlbum');
-
 
 Route::get('/contact', 'ChrllController@contact');
+
+Route::resource('/albums','Album1Controller');
+Route::resource('/','Album1Controller');

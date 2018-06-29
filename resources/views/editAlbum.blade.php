@@ -1,7 +1,8 @@
 
 <h1>Edit an album</h1>
 
-{!! Form::open(['action' => 'AlbumController@updateAlbum', $album->id, 'method' => 'POST']) !!}
+{!! Form::open(['route' => 'album/' . $album->id, 'method' => 'post']) !!}
+{{--{!! Form::open(['action' => 'AlbumController@updateAlbum', $album->id, 'method' => 'post']) !!}--}}
 <div class="form-group">
     {{Form::label('title', 'Title')}}
     {{Form::text('title', $album->title, ['class' => 'form-control', 'placeholder'=>'Title'])}}
@@ -19,7 +20,7 @@
 
 <div class="form-group">
     {{Form::label('album_art', 'Album Art')}}
-    {{Form::text('album_art', $editAlbum->album_art, ['class' => 'form-control', 'placeholder'=>'Album Art'])}}
+    {{Form::text('album_art', $album->album_art, ['class' => 'form-control', 'placeholder'=>'Album Art'])}}
 </div>
 
 

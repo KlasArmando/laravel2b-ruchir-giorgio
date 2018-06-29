@@ -13,7 +13,7 @@ class AddAlbumArtToAlbums extends Migration
      */
     public function up()
     {
-        Schema::table('albums', function($table) {
+        Schema::table('album1s', function($table) {
             $table->string('album_art');
         });
     }
@@ -25,7 +25,7 @@ class AddAlbumArtToAlbums extends Migration
      */
     public function down()
     {
-        Schema::table('albums', function($table) {
+        Schema::table('album1s', function($table) {
             $table->dropColumn('album_art');
         });
     }

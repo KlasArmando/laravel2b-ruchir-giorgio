@@ -11,4 +11,8 @@ class Albums extends Model
     protected $fillable = [
         'title', 'artist', 'description', 'album_art',
     ];
+
+    public function artistRelation() {
+        return $this->belongsTo('App\artists');
+    }
 }
