@@ -1,9 +1,6 @@
 @extends('main')
 
 @section('container')
-    <?php
-        var_dump('album1');
-    ?>
     <div id="container">
         <div class="row">
             <div class="grid3">
@@ -65,8 +62,13 @@
     @else
         <nav>
             <ul>
-                <li><a href="{{ url('editAlbum/'.$album1->id)."/edit"  }}">edit</a></li>
-                <li><a href="{{ url('/deleteAlbum') }}">delete</a></li>
+                <li><a href="{{ url('albums/'.$album1->id.'/edit') }}">edit</a></li>
+                <form action="{{ route('albums.destroy',$album1->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">delete</button>
+                </form>
+                {{--<li><a href="{{ url('albums/'.$album1->id.'/delete') }}">delete</a></li>--}}
             </ul>
         </nav>
     @endguest

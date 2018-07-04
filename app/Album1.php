@@ -13,6 +13,6 @@ class Album1 extends Model
     ];
 
     public function artistRelation() {
-        //return $this->belongsTo('App\artists');
+        return $this->belongsTo('App\artists');
     }
 }

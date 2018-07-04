@@ -4,7 +4,8 @@
     <div class="overview">
         @foreach($album1s->reverse() as $album1)
             <div class="coverart">
-                <a href="{{ route('albums.show',$album1->id) }}">
+                {{--<a href="{{ route('albums.show',$album1->id) }}">--}}
+                <a href="{{ url('/albums/'.$album1->id) }}">
                     <img class="coverimage" src="{{$album1->album_art}}">
                     <p class="covertext">{{$album1->title}}</p>
                 </a>

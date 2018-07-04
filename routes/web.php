@@ -27,3 +27,5 @@ Route::get('/contact', 'ChrllController@contact');
 
 Route::resource('/albums','Album1Controller');
 Route::resource('/','Album1Controller');
+
+Route::resource('/genres', 'GenreController');

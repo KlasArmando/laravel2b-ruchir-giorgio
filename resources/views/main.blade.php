@@ -64,6 +64,13 @@
             transition: 0.4s;
             border-radius: 4px;
         }
+        button:hover {
+            color: #5a6268;
+            background-color: #68c1be;
+            transition: 0.4s;
+            border-radius: 4px;
+            cursor: pointer;
+        }
         .overview {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -290,6 +297,15 @@
             margin-right: 2.5px;
         }
 
+        button {
+            color: #68c1be;
+            background: #000;
+            text-decoration: none;
+            padding: 4px;
+            font-size: 17px;
+            border: none;
+        }
+
         .meter-score-1 .meter-score-bar-1,
         .meter-score-2 .meter-score-bar-1,
         .meter-score-2 .meter-score-bar-2,
@@ -426,6 +442,7 @@
         <li><a href="{{ url('/albums') }}">ALBUMS</a></li>
         <li><a href="{{ url('/artiesten') }}">ARTIESTEN</a></li>
         <li><a href="{{ url('/singles') }}">SINGLES</a></li>
+        <li><a href="{{ url('/genres') }}">GENRES</a></li>
         <li><a href="{{ url('/contact') }}">CONTACT</a></li>
         @guest
             <li><a class="nav-link" href="{{ route('login') }}">{{ __('INLOGGEN') }}</a></li>

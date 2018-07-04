@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Album1;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Album1Controller extends Controller
 {
@@ -60,10 +61,12 @@ class Album1Controller extends Controller
      * Display the specified resource.
      *
      * @param  \App\Album1  $album1
+     * @param  $ID
      * @return \Illuminate\Http\Response
      */
-    public function show(Album1 $album1)
+    public function show(  $ID)
     {
+        $album1 = DB::table('album1s')->where('id', $ID)->first();
         return view('albums.show',compact('album1'));
     }
 
@@ -73,8 +76,9 @@ class Album1Controller extends Controller
      * @param  \App\Album1  $album1
      * @return \Illuminate\Http\Response
      */
-    public function edit(Album1 $album1)
+    public function edit( $ID)
     {
+        $album1 = DB::table('album1s')->where('id', $ID)->first();
         return view('albums.edit',compact('album1'));
     }
 
@@ -85,7 +89,7 @@ class Album1Controller extends Controller
      * @param  \App\Album1  $album1
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Album1 $album1)
+    public function update(Request $request, Album1 $album1, $id)
     {
         request()->validate([
             'title' => 'required',
@@ -99,8 +103,18 @@ class Album1Controller extends Controller
             'profanity' => 'required',
         ]);
 
+        $album = Album1::find($id);
+        $album->title = $request->input('title');
+        $album->artist = $request->input('artist');
+        $album->description = $request->input('description');
+        $album->album_art = $request->input('album_art');
+        $album->popularity = $request->input('popularity');
+        $album->vocabulary = $request->input('vocabulary');
+        $album->rhymes = $request->input('rhymes');
+        $album->similes = $request->input('similes');
+        $album->profanity = $request->input('profanity');
 
-        $album1->update($request->all());
+        $album->save();
 
 
         return redirect()->route('albums.index')
@@ -113,8 +127,9 @@ class Album1Controller extends Controller
      * @param  \App\Album1  $album1
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Album1 $album1)
+    public function destroy(  $id)
     {
+        $album1 = Album1::find($id);
         $album1->delete();
 
 
